@@ -342,14 +342,3 @@ git stash apply
 ```bash
 git stash clear
 ```
-##
-## 🔄 **Undoing Changes**
-- **Undo last commit (keep changes staged) : Moves HEAD back by one commit, keeps changes staged**
-```bash
- git reset --soft HEAD~1
-```
-
-- **Undo last commit and discard changes : Moves HEAD back by one commit, discards all changes.**
-```bash
-   git reset --hard HEAD~1
-```

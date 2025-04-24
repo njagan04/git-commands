@@ -1,0 +1,159 @@
+
+========================
+Git Command Reference
+========================
+
+1. Create a New Local Repository
+--------------------------------
+git init
+> Initializes a new Git repository in the current directory.
+
+2. Link a Local Repository to a Remote
+--------------------------------------
+git remote add origin https://github.com/your-username/your-repository.git
+> Links your local repo to a remote GitHub repository.
+
+3. Stage and Commit Changes
+---------------------------
+git status
+> Shows current changes (staged, unstaged, untracked).
+
+git add <file-name>
+> Stages a specific file.
+
+git add .
+> Stages all changes.
+
+git commit -m "Your commit message"
+> Commits staged changes with a message.
+
+4. Push Changes to GitHub
+--------------------------
+git push origin main
+> Pushes changes to the `main` branch of the remote repo.
+
+git push --set-upstream origin main
+> Pushes and sets upstream tracking branch for `main`.
+
+5. Create and Switch Branches
+-----------------------------
+git branch new-branch-name
+> Creates a new branch.
+
+git checkout new-branch-name
+> Switches to a branch.
+
+git checkout -b new-branch-name
+> Creates and switches to a new branch.
+
+git branch
+> Lists all branches, marks current branch with `*`.
+
+6. Merge Branches
+------------------
+git merge branch-name-to-merge
+> Merges the specified branch into the current one.
+
+git add <resolved-file>
+> Stages a resolved merge conflict file.
+
+git commit -m "Resolved merge conflict"
+> Commits the merge resolution.
+
+7. Pull Changes from Remote
+----------------------------
+git pull origin main
+> Fetches and merges changes from the remote `main` branch.
+
+8. View Git History
+--------------------
+git log
+> Shows full commit history.
+
+git log --oneline
+> Shows concise commit history.
+
+9. Undo Changes
+----------------
+git reset HEAD <file-name>
+> Unstages a file (keeps local changes).
+
+git checkout -- <file-name>
+> Reverts a file to last committed state.
+
+git reset --soft HEAD~1
+> Undo last commit, keep changes staged.
+
+git reset --hard HEAD~1
+> Completely remove last commit and changes.
+
+git push --force
+> Force push (use with caution!).
+
+10. Create and Push Tags
+-------------------------
+git tag -a v1.0 -m "Version 1.0"
+> Creates an annotated tag.
+
+git push origin --tags
+> Pushes all tags to remote.
+
+11. Use .gitignore
+-------------------
+Create a `.gitignore` file and add unwanted files/folders:
+Example:
+    node_modules/
+    *.log
+    .env
+
+12. Remove Files from Git
+--------------------------
+git rm --cached <file-name>
+> Removes from Git but keeps locally.
+
+git rm <file-name>
+> Removes from both Git and local directory.
+
+13. Revert Commits
+-------------------
+git revert <commit-hash>
+> Creates a new commit that undoes the changes.
+
+git reset --hard <commit-hash>
+> Resets to a previous commit, discarding all changes.
+
+14. Git LFS (Large File Storage)
+---------------------------------
+git lfs track "path/to/large-file"
+git add .gitattributes
+git add path/to/large-file
+git commit -m "Track large files with LFS"
+git push origin main
+> Tracks large files via Git LFS.
+
+15. Clone a Repository
+-----------------------
+git clone https://github.com/your-username/your-repository.git
+> Clones a remote repo to your local machine.
+
+16. Remote Repository Management
+---------------------------------
+git remote add origin <url>
+> Adds a new remote.
+
+git remote remove origin
+> Removes an existing remote.
+
+git remote rename old-name new-name
+> Renames a remote.
+
+git remote -v
+> Shows remote URLs for fetch/push.
+
+17. Push and Pull Specific Branches
+------------------------------------
+git push origin branch-name
+> Pushes a branch to the remote.
+
+git pull origin branch-name
+> Pulls a branch from the remote.

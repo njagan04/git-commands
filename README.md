@@ -1,353 +1,355 @@
-
-# Git Command Reference
-
----
-
 ## 🌱 **Repository Setup**
-- **Initialize a repository:**
-\`\`\`bash
+- **Initialize a repository : Initializes a new Git repository in the current directory.**
+
+```bash
 git init
-\`\`\`
-> Initializes a new Git repository in the current directory.
+```
 
 - **Clone an existing repository:**
-\`\`\`bash
+```bash
 git clone <repository-url>
-\`\`\`
+```
 
----
 
 ## 🔗 **Remote Repository Management**
-- **Add a remote repository:**
-\`\`\`bash
+- **Add a remote repository : Links your local repo to a remote GitHub repository.**
+```bash
 git remote add origin <repository-url>
-\`\`\`
-> Links your local repo to a remote GitHub repository.
+```
 
 - **View configured remotes:**
-\`\`\`bash
+```bash
 git remote -v
-\`\`\`
+```
 
 - **Remove a remote:**
-\`\`\`bash
+```bash
 git remote remove <remote-name>
-\`\`\`
+```
 
 - **Rename a remote:**
-\`\`\`bash
+```bash
 git remote rename <old-name> <new-name>
-\`\`\`
+```
 
----
-
+##
 ## 📂 **Staging & Committing Changes**
-- **Check status of files:**
-\`\`\`bash
+- **Check status of files : Shows current changes (staged, unstaged, untracked).**
+```bash
 git status
-\`\`\`
-> Shows current changes (staged, unstaged, untracked).
-
+```
 - **Stage specific file(s):**
-\`\`\`bash
+```bash
 git add <file-name>
-\`\`\`
+```
 
 - **Stage all changes:**
-\`\`\`bash
+```bash
 git add .
-\`\`\`
+```
 
 - **Unstage a file (keep changes):**
-\`\`\`bash
+```bash
 git reset HEAD <file-name>
-\`\`\`
+```
 
 - **Commit changes with a message:**
-\`\`\`bash
+```bash
 git commit -m "Commit message"
-\`\`\`
+```
 
 - **Amend the last commit (optional message change):**
-\`\`\`bash
+```bash
 git commit --amend
-\`\`\`
+```
 
----
-
+##
 ## 🌿 **Branching**
 ### **Create & Manage Branches**
 - **List all branches:**
-\`\`\`bash
+```bash
 git branch
-\`\`\`
+```
 
 - **Create a new branch:**
-\`\`\`bash
+```bash
 git branch <branch-name>
-\`\`\`
+```
 
 - **Create and switch to a new branch:**
-\`\`\`bash
+```bash
 git checkout -b <branch-name>
-\`\`\`
+```
 
 - **Switch to an existing branch:**
-\`\`\`bash
+```bash
 git checkout <branch-name>
-\`\`\`
+```
 
 - **Delete a local branch:**
-\`\`\`bash
+```bash
 git branch -d <branch-name>
-\`\`\`
+```
 
 - **Force delete a local branch:**
-\`\`\`bash
+```bash
 git branch -D <branch-name>
-\`\`\`
+```
 
 - **Rename current branch:**
-\`\`\`bash
+```bash
 git branch -m <new-branch-name>
-\`\`\`
+```
 
 ### **Working with Remote Branches**
 - **Push a branch to remote:**
-\`\`\`bash
+```bash
 git push origin <branch-name>
-\`\`\`
+```
 
 - **Pull a specific branch:**
-\`\`\`bash
+```bash
 git pull origin <branch-name>
-\`\`\`
+```
 
 - **Fetch all remote branches:**
-\`\`\`bash
+```bash
 git fetch
-\`\`\`
+```
 
 - **Delete a remote branch:**
-\`\`\`bash
+```bash
 git push origin --delete <branch-name>
-\`\`\`
+```
 
 - **Track a remote branch:**
-\`\`\`bash
+```bash
 git checkout -b <branch-name> origin/<branch-name>
-\`\`\`
+```
 
----
-
+##
 ## 🔀 **Merging & Rebasing**
 ### **Merging**
 - **Merge a branch into the current branch:**
-\`\`\`bash
+```bash
 git merge <branch-name>
-\`\`\`
+```
 
 - **Resolve conflicts (after editing conflicted files):**
-\`\`\`bash
+```bash
 git add <resolved-file>
 git commit -m "Resolved merge conflict"
-\`\`\`
+```
 
 - **Abort a merge:**
-\`\`\`bash
+```bash
 git merge --abort
-\`\`\`
+```
 
+- **Delete the branch locally :**
+Use -d to delete only if it's fully merged
+Use -D to force delete if it's not merged (use with caution)
+```bash
+git branch -d <feature-xyz>
+```
+
+- **Delete the branch remotely (if pushed to GitHub): **
+```bash
+git push origin --delete feature-xyz
+```
 ### **Rebasing**
 - **Rebase current branch onto another branch:**
-\`\`\`bash
+```bash
 git rebase <branch-name>
-\`\`\`
+```
 
 - **Abort a rebase:**
-\`\`\`bash
+```bash
 git rebase --abort
-\`\`\`
+```
 
 - **Continue rebase after resolving conflicts:**
-\`\`\`bash
+```bash
 git rebase --continue
-\`\`\`
+```
 
----
-
+##
 ## 🚀 **Pushing & Pulling**
 - **Push to the remote repository (current branch):**
-\`\`\`bash
+```bash
 git push origin <branch-name>
-\`\`\`
+```
 
 - **Push with upstream tracking (first-time push):**
-\`\`\`bash
+```bash
 git push --set-upstream origin <branch-name>
-\`\`\`
+```
 
 - **Pull latest changes:**
-\`\`\`bash
+```bash
 git pull origin <branch-name>
-\`\`\`
+```
 
 - **Fetch changes without merging:**
-\`\`\`bash
+```bash
 git fetch
-\`\`\`
+```
 
 - **Force push (use cautiously):**
-\`\`\`bash
+```bash
 git push --force
-\`\`\`
+```
 
----
-
+##
 ## 🕒 **History & Logs**
 - **View commit history:**
-\`\`\`bash
+```bash
 git log
-\`\`\`
+```
 
 - **Concise commit history:**
-\`\`\`bash
+```bash
 git log --oneline
-\`\`\`
+```
 
 - **View commit history for a specific file:**
-\`\`\`bash
+```bash
 git log <file-name>
-\`\`\`
+```
 
 - **View branch history (graph):**
-\`\`\`bash
+```bash
 git log --oneline --graph --decorate --all
-\`\`\`
+```
 
----
-
+##
 ## 🔄 **Undoing Changes**
 - **Discard changes to a file:**
-\`\`\`bash
+```bash
 git checkout -- <file-name>
-\`\`\`
+```
 
 - **Undo last commit (keep changes):**
-\`\`\`bash
+```bash
 git reset --soft HEAD~1
-\`\`\`
+```
 
 - **Undo last commit and discard changes:**
-\`\`\`bash
+```bash
 git reset --hard HEAD~1
-\`\`\`
+```
 
 - **Revert a specific commit:**
-\`\`\`bash
+```bash
 git revert <commit-hash>
-\`\`\`
+```
 
 - **Reset to a specific commit:**
-\`\`\`bash
+```bash
 git reset --hard <commit-hash>
-\`\`\`
+```
 
----
-
+##
 ## 🏷️ **Tags**
 - **Create an annotated tag:**
-\`\`\`bash
+```bash
 git tag -a <tag-name> -m "Tag message"
-\`\`\`
+```
 
 - **List all tags:**
-\`\`\`bash
+```bash
 git tag
-\`\`\`
+```
 
 - **Push tags to remote:**
-\`\`\`bash
+```bash
 git push origin --tags
-\`\`\`
+```
 
 - **Delete a tag:**
-\`\`\`bash
+```bash
 git tag -d <tag-name>
-\`\`\`
+```
 
 - **Delete remote tag:**
-\`\`\`bash
+```bash
 git push origin :refs/tags/<tag-name>
-\`\`\`
+```
 
----
-
+##
 ## 📄 **.gitignore**
 - **Create/Edit `.gitignore`:**
+Prevents specified files/folders from being tracked.
 ```plaintext
 node_modules/
 *.log
 .env
 ```
-> Prevents specified files/folders from being tracked.
 
 - **Remove a tracked file while keeping it locally:**
-\`\`\`bash
+```bash
 git rm --cached <file-name>
-\`\`\`
+```
 
----
-
+##
 ## 📦 **Git Large File Storage (LFS)**
 - **Track large files:**
-\`\`\`bash
+```bash
 git lfs track "<file-path>"
-\`\`\`
+```
 
 - **Check tracked LFS files:**
-\`\`\`bash
+```bash
 git lfs ls-files
-\`\`\`
+```
 
 - **Push LFS-tracked files:**
-\`\`\`bash
+```bash
 git add .gitattributes
 git add <file-path>
 git commit -m "Track large file with LFS"
 git push origin <branch-name>
-\`\`\`
+```
 
----
-
+##
 ## 🔧 **Miscellaneous**
 - **Check current configuration:**
-\`\`\`bash
+```bash
 git config --list
-\`\`\`
+```
 
 - **Check remote repository URL:**
-\`\`\`bash
+```bash
 git remote show origin
-\`\`\`
+```
 
 - **Stash changes (temporarily save):**
-\`\`\`bash
+```bash
 git stash
-\`\`\`
+```
 
 - **List stashed changes:**
-\`\`\`bash
+```bash
 git stash list
-\`\`\`
+```
 
 - **Apply stashed changes:**
-\`\`\`bash
+```bash
 git stash apply
-\`\`\`
+```
 
 - **Clear all stashed changes:**
-\`\`\`bash
+```bash
 git stash clear
-\`\`\`
+```
+##
+## 🔄 **Undoing Changes**
+- **Undo last commit (keep changes staged) : Moves HEAD back by one commit, keeps changes staged**
+```bash
+ git reset --soft HEAD~1
+```
 
+- **Undo last commit and discard changes : Moves HEAD back by one commit, discards all changes.**
+```bash
+   git reset --hard HEAD~1
+```

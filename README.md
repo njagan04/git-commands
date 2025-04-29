@@ -1,5 +1,5 @@
 <div align = "center">
-  <a href="[https://medium.com/@jykroo](https://medium.com/@jykroo/git-command-reference-guide-a-complete-beginner-to-advanced-cheatsheet-df017fd1e8db)" target="_blank" style="margin-right: 50px;">
+  <a href="https://medium.com/@jykroo/git-command-reference-guide-a-complete-beginner-to-advanced-cheatsheet-df017fd1e8db" target="_blank" style="margin-right: 50px;">
     <img src="https://img.shields.io/static/v1?message=Click%20Here%20to%20find%20it%20in%20Medium%20!!&logo=M&label=&color=12100E&logoColor=white&labelColor=&style=for-the-badge" height="40" alt="medium logo" style="vertical-align: top;" />
   </a>
 </div>
